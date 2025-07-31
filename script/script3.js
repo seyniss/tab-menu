@@ -7,6 +7,7 @@ init(i);
 function init(q){
     navList[q].classList.add('on')
     content[q].classList.add('active')
+    
 }
 
 function reset(){
