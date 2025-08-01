@@ -30,10 +30,6 @@ section{
     position: relative;
     height: 100%;
 }
-#s01 .rel{
-    max-width: 1140px;
-    text-align: left;
-}
 section h1 {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -44,7 +40,67 @@ section h1 {
     position: relative;
     display: inline-block;
 }
-section#s02 h1::after {
+
+#s01 .rel {
+    max-width: 1140px;
+    text-align: left;
+}
+#s01 h1 {
+    font-size: 25px;
+}
+#s01 .arr{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+#s01 .arr .arr-left{
+    left:-50%;
+}
+#s01 .arr .arr-right{
+    right:-50%;
+}
+.s1-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.s1-list li{
+    width: 48%;
+    height: 200px;
+}
+.s1-list li a{
+    display: flex;
+    align-items: center;
+}
+.s1-list li .img-wrap{
+    width: 310px;
+    overflow: hidden;
+}
+.s1-list li .img-wrap img{
+    transition: all .3s;
+}
+.s1-list li:hover .img-wrap img{
+    transform: scale(1.3);
+}
+.s1-list li .t-wrap{
+    width: calc(100% - 310px);
+    padding: 0 20px;
+
+
+}
+.s1-list li .t-wrap .txt1{
+    color: #9354FB;
+}
+.s1-list li .t-wrap .txt2{
+    color: #828282;
+    font-size: 14px;
+}
+.s1-list li .t-wrap h2{
+    font-size: 20px;
+    color: #333;
+}
+
+#s02 h1::after {
     content:"";
     display: block;
     width: 88px;
@@ -53,7 +109,7 @@ section#s02 h1::after {
     position: absolute;
     right: -88px;
     top: -88px;
-
+    animation: star 1s infinite alternate; 
 }
 .nav-list {
     margin: 20px 0;
@@ -92,7 +148,7 @@ section h1 span{
     padding: 30px;
     background-color: #fff;
 }
-.content_list li.active a:after{
+.content_list li a:after{
     display: block;
     position: absolute;
     width: 100%;
@@ -109,8 +165,7 @@ section h1 span{
     top: 20px;
 }
 
-
-.img-wrap {
+#s02 .img-wrap {
     width: 300px;
     height: 400px;
     margin: auto;
@@ -139,6 +194,7 @@ section h1 span{
 }
 .deco {
     position: absolute;
+    transition: all .3s;
 }
 .content_list li:nth-child(1) .deco {
     top: -20px;
@@ -146,41 +202,18 @@ section h1 span{
 }
 .content_list li:nth-child(2) .deco {
     top: 50%;
-    right: -50px;
-    animation: ani1 2s infinite;
+    right: -50px
 }
 .content_list li:nth-child(3) .deco {
     right: -50px;
     bottom: -50px;
 }
 
-@keyframes star {
-    from {transform:scale(1)}
-    to{transform: scale(1.5) rotate(30deg)}
+.content_list li:hover .deco {
+    transform: rotate(10deg);
 }
 
-@keyframes ani1 {
-    0%{
-        transform: rotate(0deg);
-    } 
-    20%{
-        transform: rotate(180deg);
-    } 
-    80%{
-        transform: rotate(360deg);
-    }
+@keyframes  star {
+    from {transform: scale(1);}
+    to {transform: scale(1.3) rotate(45deg);}
 }
-
-
-.s1-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap:50px;
-}
-.s1-list a{
-    display: flex;
-}
-.s1-list li{
-    width:48%;
-}
-
